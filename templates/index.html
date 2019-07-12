@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name ="viewport" content ="width=device-width", initial-scale="1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Mission to Mars</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        
+    </head>
+
+    <body style="background-image: url(https://cdn.eso.org/images/screen/eso1007a.jpg); background-size: 100%;">
+        <div class="container">
+
+            <div class = "jumbotron text-center" style="background-image: url(https://www.worldanvil.com/uploads/images/92fdb805a60c93c25e7e583c4226bae5.jpeg); background-size: 100%; height:100%;">
+                <h1 style="color:lightgrey">Mission to Mars</h1>
+                <p><a class="btn btn-primary btn-lg" href="/scrape" style="color:rgb(226, 223, 21)" role="button">Scrape New Data</a></p>
+
+            </div>
+
+            <!--News section-->
+            <div class="container" style="color:linen">
+                <h2>Latest Mars News</h2>
+                <h4 style="color:rgb(226, 223, 21)">{{ mars_info.news_title }}</h4>
+                <p style="color:rgb(226, 223, 21)">{{ mars_info.news_paragraph }}</p>
+                            
+            </div>
+
+            <!--Featured Mars Image-->
+            <div class="container" style="color:linen">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-12">
+                        <h2>Featured Mars Image</h2>
+                        <img src="{{ mars_info.featured_image_url }}" style="width:90%; max-height: auto;" alt="Mars Featured Image">
+                    </div>
+              
+                    <!--Weather block-->
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                        <div class="block" style="width:40rem;">
+                            <div class="block_body">
+                                <h2 class="block-title">Current Weather on Mars</h2>
+                                <p class="block-text" style="color:rgb(226, 223, 21)">{{ mars_info.weather_tweet }}</p> 
+
+                            </div>
+                                            
+                        </div>
+               
+                        <!--Table-->
+                        <br>
+                        <br>
+                        <h2>Mars Facts</h2>
+                            <div style="color:rgb(226, 223, 21)">{{ mars_info.mars_facts|safe }}</div>
+                    </div>
+                </div>
+            </div>           
+            
+        </div>
+
+    </body>
+
+</html>
+
+
